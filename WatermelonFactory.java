@@ -1,8 +1,11 @@
 package assignment1;
 
+// Factory for watermelons, can create 2 different brands.
 public class WatermelonFactory extends GroceryProductFactory{
 
+    // See GroceryProductFactory class for information on createProduct
     public Product createProduct(String brand) {
+        
         double tempPrice = -1;
 
         // Branch for brand 1
@@ -17,7 +20,8 @@ public class WatermelonFactory extends GroceryProductFactory{
             } else {
                 return null;
             }
-
+            
+        // Branch for brand 2
         } else if (brand == "Icebox") {
 
             IceboxWatermelon iceWatermelon = new IceboxWatermelon();
@@ -29,7 +33,8 @@ public class WatermelonFactory extends GroceryProductFactory{
             } else {
                 return null;
             }
-
+            
+        // Branch if brand passed does not match
         } else {
             return null;
         }
