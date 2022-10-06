@@ -1,8 +1,11 @@
 package assignment1;
 
+// Factory for bananas, can create 2 different brands.
 public class BananaFactory extends GroceryProductFactory{
 
+    // See GroceryProductFactory class for information on createProduct
     public Product createProduct(String brand) {
+        
         double tempPrice = -1;
 
         // Branch for brand 1
@@ -17,7 +20,7 @@ public class BananaFactory extends GroceryProductFactory{
             } else {
                 return null;
             }
-
+        // Branch for brand 2
         } else if (brand == "Dole") {
 
             DoleBanana dolBanana = new DoleBanana();
@@ -30,6 +33,7 @@ public class BananaFactory extends GroceryProductFactory{
                 return null;
             }
 
+        // Branch if brand passed does not match
         } else {
             return null;
         }
